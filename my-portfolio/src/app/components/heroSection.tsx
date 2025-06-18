@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import profile from "@/app/assets/profile.png";
 import Lottie from "lottie-react";
-import { ArrowRight, Code, Zap } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngular,faJava,faLaravel,faVuejs } from "@fortawesome/free-brands-svg-icons";
 import mockHeroLottieData from "@/app/components/lottie/hero-lottie.json";
@@ -90,7 +89,7 @@ export default function HeroSection() {
                 </div>
                 <div className="mt-2 overflow-hidden">
                   <span className="inline-block text-white font-medium text-4xl xl:text-5xl 2xl:text-6xl">
-                    I'm{' '}
+                    I&apos;m{' '}
                     <span className="relative group">
                       <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400 bg-clip-text text-transparent font-extrabold hover:from-green-300 hover:via-emerald-300 hover:to-lime-300 transition-all duration-300">
                        El barry Anouar
@@ -117,7 +116,7 @@ export default function HeroSection() {
               {/* CTA Buttons */}
               <div className="flex flex-row gap-4">
                 <button className="group relative px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25">
-                  <span className="relative z-10">Let's Connect</span>
+                  <span className="relative z-10">Let&apos;s Connect</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
                 
@@ -258,7 +257,7 @@ export default function HeroSection() {
               </div>
               <div className="mt-2 overflow-hidden">
                 <span className="inline-block text-white font-medium text-2xl sm:text-3xl md:text-4xl">
-                  I'm{' '}
+                  I&apos;m{' '}
                   <span className="relative group">
                     <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400 bg-clip-text text-transparent font-extrabold hover:from-green-300 hover:via-emerald-300 hover:to-lime-300 transition-all duration-300">
                      El barry Anouar
@@ -285,7 +284,7 @@ export default function HeroSection() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
               <button className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25">
-                <span className="relative z-10">Let's Connect</span>
+                <span className="relative z-10">Let&apos;s Connect</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </button>
               
