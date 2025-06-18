@@ -3,6 +3,9 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import profile from "@/app/assets/profile.png";
 import Lottie from "lottie-react";
+import { ArrowRight, Code, Zap } from "lucide-react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngular,faJava,faLaravel,faVuejs } from "@fortawesome/free-brands-svg-icons";
 import mockHeroLottieData from "@/app/components/lottie/hero-lottie.json";
 
 export default function HeroSection() {
@@ -68,7 +71,7 @@ export default function HeroSection() {
       {/* Main Content Container */}
       <div className="relative z-20 min-h-screen">
         {/* Desktop Layout (lg and above) */}
-        <div className="hidden lg:flex lg:justify-between lg:items-center lg:h-screen lg:px-8 xl:px-12">
+        <div className="hidden lg:flex px-6 lg:justify-between lg:items-center lg:h-screen lg:px-8 xl:px-12">
           {/* Left Content */}
           <div className="flex-1 max-w-3xl">
             <div className={`transition-all duration-1000 ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
@@ -125,27 +128,118 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+          <div className="flex-1 max-w-3xl">
+            <div className={`relative flex justify-center ${isLoaded ? "slide-in-right" : ""}`}>
+              <div className="relative">
+                {/* Multiple glowing rings */}
+                <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-3xl scale-110 pulse-glow"></div>
+                <div className="absolute inset-0 bg-emerald-400/10 rounded-full blur-2xl scale-125 rotate-slow"></div>
 
-          {/* Right Image */}
-          <div className="flex-shrink-0 ml-12">
-            <Image 
-              src={profile}
-              alt="Profile Picture"
-              className="w-80 h-fit xl:w-96 2xl:w-[28rem] rounded-full shadow-2xl object-cover hover:scale-105 transition-transform duration-300"
-            />
+                {/* Orbiting elements */}
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: "20s" }}>
+                  <div className="absolute -top-4 left-1/2 w-3 h-3 bg-emerald-500 rounded-full transform -translate-x-1/2"></div>
+                  <div className="absolute top-1/2 -right-4 w-2 h-2 bg-emerald-400 rounded-full transform -translate-y-1/2"></div>
+                  <div className="absolute -bottom-4 left-1/2 w-4 h-4 border border-emerald-500 transform -translate-x-1/2 rotate-45"></div>
+                  <div className="absolute top-1/2 -left-4 w-3 h-3 bg-emerald-300 rounded-full transform -translate-y-1/2"></div>
+                </div>
+
+                {/* Main image container */}
+                <div className="relative w-80 h-120 lg:w-96 floating-animation">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full"></div>
+                  <Image
+                    src={profile}
+                    alt="El barry Anouar"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover rounded-full border-4 border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300"
+                    priority
+                  />
+
+                  {/* Floating skill badges */}
+                  <div className="absolute -top-8 -left-8 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-red-500 floating-animation">
+                    <FontAwesomeIcon icon={faAngular} className="mr-2"/>
+                    Angular
+                  </div>
+                  <div
+                    className="absolute -bottom-8 -right-8 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-yellow-400 floating-animation"
+                    style={{ animationDelay: "1s" }}
+                  >
+                    <FontAwesomeIcon icon={faJava} className="mr-2"/>
+                    Java
+                  </div>
+                  <div className="absolute top-50 -right-30 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-red-400 floating-animation">
+                    <FontAwesomeIcon icon={faLaravel} className="mr-2"/>
+                    Laravel
+                  </div>
+                  <div
+                    className="absolute bottom-50 -left-30 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-green-400 floating-animation"
+                    style={{ animationDelay: "1s" }}
+                  >
+                    <FontAwesomeIcon icon={faVuejs} className="mr-2"/>
+                    Vue.js
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Mobile/Tablet Layout (below lg) */}
         <div className="lg:hidden flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 md:px-8 py-8">
           {/* Profile Image */}
-          <div className="mb-8 sm:mb-12">
-            <Image 
-              src={profile}
-              alt="Profile Picture"
-              className="w-40 h-fit sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full shadow-2xl object-cover"
-            />
-          </div>
+          <div className={`relative flex justify-center lg:justify-end ${isLoaded ? "slide-in-right" : ""}`}>
+              <div className="relative">
+                {/* Multiple glowing rings */}
+                <div className="absolute inset-0 bg-emerald-500/20 rounded-full blur-3xl scale-110 pulse-glow"></div>
+                <div className="absolute inset-0 bg-emerald-400/10 rounded-full blur-2xl scale-125 rotate-slow"></div>
+
+                {/* Orbiting elements */}
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: "20s" }}>
+                  <div className="absolute -top-4 left-1/2 w-3 h-3 bg-emerald-500 rounded-full transform -translate-x-1/2"></div>
+                  <div className="absolute top-1/2 -right-4 w-2 h-2 bg-emerald-400 rounded-full transform -translate-y-1/2"></div>
+                  <div className="absolute -bottom-4 left-1/2 w-4 h-4 border border-emerald-500 transform -translate-x-1/2 rotate-45"></div>
+                  <div className="absolute top-1/2 -left-4 w-3 h-3 bg-emerald-300 rounded-full transform -translate-y-1/2"></div>
+                </div>
+
+                {/* Main image container */}
+                <div className="relative w-80 h-120 lg:w-96 floating-animation">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full"></div>
+                  <Image
+                    src={profile}
+                    alt="El barry Anouar"
+                    width={400}
+                    height={400}
+                    className="w-full h-full object-cover rounded-full border-4 border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300"
+                    priority
+                  />
+
+                  {/* Floating skill badges */}
+                  <div className="absolute -top-10 -left-8 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-red-500 floating-animation">
+                    <FontAwesomeIcon icon={faAngular} className="mr-2"/>
+                    Angular
+                  </div>
+                  <div
+                    className="absolute -bottom-10 -right-8 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-yellow-400 floating-animation"
+                    style={{ animationDelay: "1s" }}
+                  >
+                    <FontAwesomeIcon icon={faJava} className="mr-2"/>
+                    Java
+                  </div>
+                  <div className="absolute -top-12 -right-8 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-red-400 floating-animation">
+                    <FontAwesomeIcon icon={faLaravel} className="mr-2"/>
+                    Laravel
+                  </div>
+                  <div
+                    className="absolute -bottom-12 -left-8 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-full px-3 py-1 text-sm text-green-400 floating-animation"
+                    style={{ animationDelay: "1s" }}
+                  >
+                    <FontAwesomeIcon icon={faVuejs} className="mr-2"/>
+                    Vue.js
+                  </div>
+
+                </div>
+              </div>
+            </div>
 
           {/* Content */}
           <div className={`text-center transition-all duration-1000 w-full ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
@@ -203,12 +297,13 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-2 sm:h-3 bg-white/50 rounded-full mt-1 sm:mt-2 animate-pulse" />
-          </div>
+       {/* Scroll indicator with animation */}
+       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="w-6 h-10 border-2 border-slate-600 rounded-full flex justify-center hover:border-emerald-500 transition-colors cursor-pointer">
+          <div className="w-1 h-3 bg-emerald-500 rounded-full mt-2 animate-bounce"></div>
         </div>
+        <p className="text-slate-500 text-xs mt-2 text-center">Scroll</p>
+      </div>
       </div>
 
       {/* Floating Elements */}
