@@ -120,7 +120,7 @@ useEffect(() => {
               <div className={`flex flex-wrap gap-6 ${isLoaded ? "slide-in-left stagger-6" : ""}`}>
                 <a href="/contact" className="text-sm btn-primary inline-flex items-center gap-2 group">
                   <Sparkle size={20} className="group-hover:rotate-12 transition-transform" />
-                  Let's Connect
+                  Let&apos;s Connect
                 </a>
                 <a href="/projects" className="text-sm btn-secondary inline-flex items-center gap-2 group">
                   View My Work
