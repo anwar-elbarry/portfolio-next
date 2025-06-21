@@ -4,15 +4,17 @@ import Image from "next/image";
 import profile from "@/app/assets/profile.png";
 import Lottie from "lottie-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngular,faJava,faLaravel,faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faAngular,faJava,faLaravel,faVuejs,faGithub,faLinkedin,faDiscord } from "@fortawesome/free-brands-svg-icons";
 import mockHeroLottieData from "@/app/components/lottie/hero-lottie.json";
+import { ArrowBigRight, Sparkle } from "lucide-react";
+import ResumeBtn from "./ui/resume-btn";
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    setIsLoaded(true);
+useEffect(() => {
+  setIsLoaded(true);
     
     const handleMouseMove = (e: { clientX: number; clientY: number; }) => {
       setMousePosition({
@@ -26,9 +28,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
+    <div className="relative min-h-screen flex items-center justify-center flex-col  w-full overflow-auto bg-gradient-to-br from-black via-gray-900 to-black">
+      <section className="hero w-full h-[100vh] ">
+{/* Animated Background Elements */}
+<div className="absolute inset-0">
         {/* Gradient Orbs */}
         <div 
           className="absolute w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-r from-green-500/30 to-emerald-500/30 rounded-full blur-3xl transition-transform duration-1000 ease-out"
@@ -91,7 +94,7 @@ export default function HeroSection() {
                   <span className="inline-block text-white font-medium text-4xl xl:text-5xl 2xl:text-6xl">
                     I&apos;m{' '}
                     <span className="relative group">
-                      <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-lime-400 bg-clip-text text-transparent font-extrabold hover:from-green-300 hover:via-emerald-300 hover:to-lime-300 transition-all duration-300">
+                      <span className="text-green-500">
                        El barry Anouar
                       </span>
                       <div className="absolute -inset-2 bg-gradient-to-r from-green-600/20 to-emerald-600/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500" />
@@ -114,20 +117,21 @@ export default function HeroSection() {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-row gap-4">
-                <button className="group relative px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25">
-                  <span className="relative z-10">Let&apos;s Connect</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-                
-                <button className="group px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/10 hover:border-white/50 hover:scale-105">
+              <div className={`flex flex-wrap gap-6 ${isLoaded ? "slide-in-left stagger-6" : ""}`}>
+                <a href="/contact" className="text-sm btn-primary inline-flex items-center gap-2 group">
+                  <Sparkle size={20} className="group-hover:rotate-12 transition-transform" />
+                  Let's Connect
+                </a>
+                <a href="/projects" className="text-sm btn-secondary inline-flex items-center gap-2 group">
                   View My Work
-                  <span className="inline-block ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </button>
+                  <ArrowBigRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+                <ResumeBtn />
               </div>
             </div>
           </div>
-          <div className="flex-1 max-w-3xl">
+          { /* img portfolio*/ }
+          <div className="flex-1 max-w-3xl scale-75">
             <div className={`relative flex justify-center ${isLoaded ? "slide-in-right" : ""}`}>
               <div className="relative">
                 {/* Multiple glowing rings */}
@@ -135,22 +139,22 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-emerald-400/10 rounded-full blur-2xl scale-125 rotate-slow"></div>
 
                 {/* Orbiting elements */}
-                <div className="absolute inset-0 animate-spin" style={{ animationDuration: "20s" }}>
-                  <div className="absolute -top-4 left-1/2 w-3 h-3 bg-emerald-500 rounded-full transform -translate-x-1/2"></div>
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: "5s" }}>
+                  <div className="absolute top-1/2 -left-4 w-3 h-3 bg-emerald-500 rounded-full transform -translate-x-1/2"></div>
                   <div className="absolute top-1/2 -right-4 w-2 h-2 bg-emerald-400 rounded-full transform -translate-y-1/2"></div>
                   <div className="absolute -bottom-4 left-1/2 w-4 h-4 border border-emerald-500 transform -translate-x-1/2 rotate-45"></div>
-                  <div className="absolute top-1/2 -left-4 w-3 h-3 bg-emerald-300 rounded-full transform -translate-y-1/2"></div>
+                  <div className="absolute -top-4 left-1/2 w-4 h-4 border border-emerald-500 transform -translate-x-1/2 rotate-45"></div>
                 </div>
 
                 {/* Main image container */}
-                <div className="relative w-80 h-120 lg:w-96 floating-animation">
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full"></div>
+                <div className="relative w-60 h-120 lg:w-96 floating-animation">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-4xl"></div>
                   <Image
                     src={profile}
                     alt="El barry Anouar"
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover rounded-full border-4 border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300"
+                    width={300}
+                    height={300}
+                    className="w-full h-full object-cover rounded-4xl border-4 border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300"
                     priority
                   />
 
@@ -201,13 +205,13 @@ export default function HeroSection() {
                 </div>
 
                 {/* Main image container */}
-                <div className="relative w-80 h-120 lg:w-96 floating-animation">
+                <div className="relative w-80 h-80 lg:w-96 floating-animation">
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-full"></div>
                   <Image
                     src={profile}
                     alt="El barry Anouar"
-                    width={400}
-                    height={400}
+                    width={300}
+                    height={300}
                     className="w-full h-full object-cover rounded-full border-4 border-emerald-500/30 hover:border-emerald-500/60 transition-all duration-300"
                     priority
                   />
@@ -304,11 +308,24 @@ export default function HeroSection() {
         <p className="text-slate-500 text-xs mt-2 text-center">Scroll</p>
       </div>
       </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-16 sm:top-20 left-6 sm:left-10 w-3 h-3 sm:w-4 sm:h-4 bg-green-400/60 rounded-full animate-ping" />
-      <div className="absolute top-32 sm:top-40 right-12 sm:right-20 w-2 h-2 sm:w-3 sm:h-3 bg-emerald-400/60 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
-      <div className="absolute bottom-32 sm:bottom-40 left-12 sm:left-20 w-2 h-2 bg-lime-400/60 rounded-full animate-ping" style={{ animationDelay: '2s' }} />
+      </section>
+            {/* Social links with animations */}
+            <div className={`z-50 fixed bottom-8 right-1 transform -translate-x-1/2 flex flex-col gap-6 ${isLoaded ? "slide-in-left stagger-6" : ""}`}>
+                {[
+                  { icon: faGithub, href: "#", delay: "0.1s" },
+                  { icon: faLinkedin, href: "#", delay: "0.2s" },
+                  { icon: faDiscord, href: "#", delay: "0.3s" },
+                ].map(({ icon, href, delay }, index) => (
+                  <a
+                    key={index}
+                    href={href}
+                    className="w-12 h-12 bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-400 hover:border-emerald-500 transition-all duration-300 hover:scale-110 hover:rotate-12"
+                    style={{ animationDelay: delay }}
+                  >
+                    <FontAwesomeIcon icon={icon} />
+                  </a>
+                ))}
+            </div>
     </div>
   );
 }

@@ -42,7 +42,7 @@ export default function MouseSection() {
   return (
     <div
       ref={cursorRef}
-      className="hidden lg:block w-6 h-6 opacity-0 pointer-events-none rounded-full border-2 border-green-500 dark:border-accentColor z-[9999] fixed -translate-x-1/2 -translate-y-1/2"
+      className="hidden lg:block w-4 h-4 opacity-0 pointer-events-none rounded-full border-2 border-green-500 dark:border-accentColor z-[9999] fixed -translate-x-1/2 -translate-y-1/2"
     />
   )
 }
